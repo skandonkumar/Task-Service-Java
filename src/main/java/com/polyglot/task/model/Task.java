@@ -3,9 +3,13 @@ package com.polyglot.task.model;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 import java.util.UUID;
+import java.io.Serializable;
 
 @Table("tasks")
-public class Task {
+public class Task implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @PrimaryKey
     private UUID id;
     private String title;
